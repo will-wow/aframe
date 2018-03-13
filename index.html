@@ -7,18 +7,23 @@
         content="Hello, WebVR!">
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-animation-component@%5E3.2.x/dist/aframe-animation-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 
 </head>
 
 <body>
   <a-scene>
-    <a-entity geometry="primitive: box"
+    <a-entity id="box"
+              geometry="primitive: box"
               material="src: ./assets/dirt.jpg"
               position="-1 0.5 -3"
               shadow></a-entity>
-    <a-entity geometry="primitive: sphere; radius: 1.25"
+    <a-entity id="sphere"
+              geometry="primitive: sphere; radius: 1.25"
               material="src: ./assets/stone.jpg"
               position="0 1.25 -5"
+              animation="property: scale; dir: alternate; loop: true; to: 1.1 1.1 1.1; dur: 100"
+  
               shadow></a-entity>
     <a-entity id="cylinder"
               position="1 0.75 -3"
@@ -43,6 +48,14 @@
               light="type: point; color: white"
               position="-4 3 -1"
               animation="property: position; dir: alternate; loop: true; to: 4 3 -1; dur: 2000"></a-entity>
+
+    <a-entity id="shooting"
+              particle-system="preset: default; color: #515; particleCount: 1000"
+              position="0 1.25 -5">
+    </a-entity>
+
+    <a-entity id="snow"
+              particle-system="preset: snow; particleCount: 1000"></a-entity>
   </a-scene>
 </body>
 
