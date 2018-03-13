@@ -2,7 +2,7 @@
   "scripts": {
     "format": "yarn format-prettier && yarn format-html",
     "format-prettier": "prettier --write **/*.{md,json}",
-    "format-html": "html-beautify -s 2 -r -f *.html"
+    "format-html": "html-beautify -r -f *.html"
   },
   "devDependencies": {
     "js-beautify": "^1.7.5",

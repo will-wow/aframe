@@ -1,4 +1,4 @@
 .vscode
-*.swp$
+*.swp
 node_modules
 yarn-error.log
