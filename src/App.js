@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import { Entity, Scene } from 'aframe-react';
 
+import * as R from 'ramda';
+
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      boxMaterial: 'dirt'
+    };
+  }
+
   render() {
+    const { boxMaterial } = this.state;
+
     return (
       <Scene>
         <Entity
+          id="box"
+          events={{
+            foo: () => this.setState({ boxMaterial: 'stone' })
+          }}
           geometry={{ primitive: 'box' }}
-          material={{ src: './assets/dirt.jpg' }}
+          material={{ src: `./assets/${boxMaterial}.jpg` }}
           position={{ x: -1, y: 0.5, z: -3 }}
           shadow
         />
-
         <Entity
           geometry={{ primitive: 'sphere', radius: 1.25 }}
           material={{ src: './assets/stone.jpg' }}
@@ -32,7 +47,6 @@ class App extends Component {
           rotation="45 0 0"
           shadow
         />
-
         <Entity
           position="0 0 -4"
           rotation="-90 0 0"
@@ -40,13 +54,11 @@ class App extends Component {
           material="src: ./assets/grass.jpg"
           shadow
         />
-
         <Entity
           id="sky"
           geometry="primitive: sphere; radius: 3000"
           material="shader: flat; src: ./assets/venice.jpg; side: back"
         />
-
         <Entity
           geometry="primitive: sphere; radius: 0.2"
           material="color: white; shader: flat"
@@ -54,12 +66,10 @@ class App extends Component {
           position="-4 3 -1"
           animation="property: position; dir: alternate; loop: true; to: 4 3 -1; dur: 2000"
         />
-
         <Entity
           particle-system="preset: default; color: #515; particleCount: 1000"
           position="0 1.25 -5"
         />
-
         <Entity particle-system="preset: snow; particleCount: 1000" />
       </Scene>
     );
