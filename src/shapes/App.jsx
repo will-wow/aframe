@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Entity, Scene } from 'aframe-react';
 
+import Vencie from '../shared/Venice';
+
 import * as R from 'ramda';
 
 class App extends Component {
@@ -54,11 +56,9 @@ class App extends Component {
           material="src: ./assets/grass.jpg"
           shadow
         />
-        <Entity
-          id="sky"
-          geometry="primitive: sphere; radius: 3000"
-          material="shader: flat; src: ./assets/venice.jpg; side: back"
-        />
+
+        <Vencie />
+
         <Entity
           geometry="primitive: sphere; radius: 0.2"
           material="color: white; shader: flat"
