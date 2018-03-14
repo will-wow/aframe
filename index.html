@@ -8,7 +8,6 @@
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-animation-component@%5E3.2.x/dist/aframe-animation-component.min.js"></script>
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-
 </head>
 
 <body>
@@ -18,6 +17,7 @@
               material="src: ./assets/dirt.jpg"
               position="-1 0.5 -3"
               shadow></a-entity>
+
     <a-entity id="sphere"
               geometry="primitive: sphere; radius: 1.25"
               material="src: ./assets/stone.jpg"
@@ -31,6 +31,7 @@
               material="src: ./assets/wood.png"
               rotation="45 0 0"
               shadow></a-entity>
+
     <a-entity id="plane"
               position="0 0 -4"
               rotation="-90 0 0"
@@ -57,6 +58,8 @@
     <a-entity id="snow"
               particle-system="preset: snow; particleCount: 1000"></a-entity>
   </a-scene>
+
+  <script src="./src/random-boxes.js"></script>
 </body>
 
 </html>
