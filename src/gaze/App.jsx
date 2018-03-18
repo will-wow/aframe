@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Entity, Scene } from 'aframe-react';
+import React, { Component } from "react";
+import { Entity, Scene } from "aframe-react";
 
-import Vencie from '../shared/Venice';
+import Vencie from "../shared/Venice";
 
 const MATERIALS = {
-  LEAD: 'lead',
-  GOLD: 'gold'
+  LEAD: "lead",
+  GOLD: "gold"
 };
 
 const App = () => (
@@ -23,7 +23,7 @@ const App = () => (
     <MidasBox position={{ x: 1, y: -1, z: -4 }} />
 
     <Entity
-      geometry={{ primitive: 'plane', width: 20, height: 20 }}
+      geometry={{ primitive: "plane", width: 20, height: 20 }}
       position={{ x: 0, y: -3, z: -2 }}
       rotation="-90 0 0"
       material="src: ./assets/grass.jpg"
@@ -32,10 +32,10 @@ const App = () => (
 
     <Entity primitive="a-camera">
       <Entity
-        cursor={{ fuse: 'true', fuseTimeout: 500 }}
+        cursor={{ fuse: "true", fuseTimeout: 500 }}
         position={{ x: 0, y: 0, z: -1 }}
-        geometry={{ primitive: 'ring', radiusInner: 0.02, radiusOuter: 0.03 }}
-        material={{ color: 'black', shader: 'flat' }}
+        geometry={{ primitive: "ring", radiusInner: 0.02, radiusOuter: 0.03 }}
+        material={{ color: "black", shader: "flat" }}
       />
     </Entity>
   </Scene>
@@ -63,7 +63,7 @@ class MidasBox extends Component {
         events={{
           click: this.onClick
         }}
-        geometry={{ primitive: 'box' }}
+        geometry={{ primitive: "box" }}
         material={{ src: `./assets/${boxMaterial}.jpg` }}
         position={position}
         shadow

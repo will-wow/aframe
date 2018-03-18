@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import { Entity, Scene } from 'aframe-react';
+import React, { Component } from "react";
+import { Entity, Scene } from "aframe-react";
 
-import Vencie from '../shared/Venice';
-
-import * as R from 'ramda';
+import Vencie from "../shared/Venice";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      boxMaterial: 'dirt'
+      boxMaterial: "dirt"
     };
   }
 
@@ -22,22 +20,22 @@ class App extends Component {
         <Entity
           id="box"
           events={{
-            foo: () => this.setState({ boxMaterial: 'stone' })
+            foo: () => this.setState({ boxMaterial: "stone" })
           }}
-          geometry={{ primitive: 'box' }}
+          geometry={{ primitive: "box" }}
           material={{ src: `./assets/${boxMaterial}.jpg` }}
           position={{ x: -1, y: 0.5, z: -3 }}
           shadow
         />
         <Entity
-          geometry={{ primitive: 'sphere', radius: 1.25 }}
-          material={{ src: './assets/stone.jpg' }}
+          geometry={{ primitive: "sphere", radius: 1.25 }}
+          material={{ src: "./assets/stone.jpg" }}
           position={{ x: 0, y: 1.25, z: -5 }}
           animation={{
-            property: 'scale',
-            dir: 'alternate',
-            loop: 'true',
-            to: '1.1 1.1 1.1',
+            property: "scale",
+            dir: "alternate",
+            loop: "true",
+            to: "1.1 1.1 1.1",
             dur: 100
           }}
           shadow
