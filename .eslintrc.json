@@ -4,6 +4,9 @@
     "browser": true,
     "jest": true
   },
+  "globals": {
+    "AFRAME": true
+  },
   "rules": {
     "strict": 0,
     "react/prop-types": "skipUndeclared"
